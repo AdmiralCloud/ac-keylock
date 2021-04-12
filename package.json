@@ -1,0 +1,25 @@
+{
+  "name": "ac-keylock",
+  "author": "Mark Poepping (https://www.admiralcloud.com)",
+  "license": "MIT",
+  "repository": "admiralcloud/ac-redislock",
+  "version": "0.0.1",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "node-cache": "^5.1.2",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "ac-semantic-release": "^0.2.5",
+    "chai": "^4.2.0",
+    "eslint": "^7.14.0",
+    "ioredis": "^4.19.2",
+    "mocha": "^8.2.x"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --bail --exit --slow 1000 ./test/test.js || :"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
