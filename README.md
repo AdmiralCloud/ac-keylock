@@ -1,4 +1,4 @@
-# AC KeyLocl
+# AC KeyLock
 This tool can be used to lock operations (e.g. make sure workers will fetch a job only once). You can use it with Redis as distributed lock systems or with the built-in memory cache.
 
 This package is a successor of ac-redisLock and can easily replace ac-redisLock. Please note, that callback-style is no longer available.
