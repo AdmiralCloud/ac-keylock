@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+
+## [0.0.3](https://github.com/admiralcloud/ac-keylock/compare/v0.0.2..v0.0.3) (2021-05-01 06:40:22)
+
+
+### Bug Fix
+
+* **App:** Replace state with status | MP | [c865e9559c85e5c67dc877ccfa95537e9ef92b6b](https://github.com/admiralcloud/ac-keylock/commit/c865e9559c85e5c67dc877ccfa95537e9ef92b6b)    
+Use status (same as HTTP status code) instead of state.
 <a name="0.0.2"></a>
 
 ## [0.0.2](https://github.com/admiralcloud/ac-keylock/compare/v0.0.1..v0.0.2) (2021-05-01 06:33:44)
