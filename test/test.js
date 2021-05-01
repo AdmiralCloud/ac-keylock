@@ -40,7 +40,7 @@ const useRedis = function() {
           expires: 2
         }
         let r = await keyLock.lockKey(params)
-        expect(r).to.have.property('state', 423)
+        expect(r).to.have.property('status', 423)
       })
   
       it('Wait for 2 seconds', done => {
@@ -64,7 +64,7 @@ const useRedis = function() {
           lockValue
         }
         let r = await keyLock.releaseLock(params)
-        expect(r).to.have.property('state', 200)
+        expect(r).to.have.property('status', 200)
       })
     })
   })
@@ -96,7 +96,7 @@ const useMemory = function() {
           expires: 2
         }
         let r = await keyLock.lockKey(params)
-        expect(r).to.have.property('state', 423)
+        expect(r).to.have.property('status', 423)
       })
   
       it('Wait for 2 seconds', done => {
@@ -120,7 +120,7 @@ const useMemory = function() {
           value: lockValue
         }
         let r = await keyLock.releaseLock(params)
-        expect(r).to.have.property('state', 200)
+        expect(r).to.have.property('status', 200)
       })
     })
   })
@@ -181,7 +181,7 @@ const handleErrors = function() {
           value: lockValue
         }
         const r = await keyLock.releaseLock(params)
-        expect(r).to.have.property('state', 200)
+        expect(r).to.have.property('status', 200)
 
       })
 

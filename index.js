@@ -52,10 +52,10 @@ const keyLock = () => {
     if (lockBaseParams.redis) {
       let result = await lockBaseParams.redis.set(key, value, 'EX', expires, 'NX')
       if (result === 'OK') return { value }
-      else return { state: 423 }
+      else return { status: 423 }
     }
     else {
-      if (lockBaseParams.storage.has(key)) return { state: 423 }
+      if (lockBaseParams.storage.has(key)) return { status: 423 }
       lockBaseParams.storage.set(key, value, expires)
       return { value }
     }
@@ -77,7 +77,7 @@ const keyLock = () => {
         }  
       }
       await lockBaseParams.redis.del(key)
-      return { state: 200 }
+      return { status: 200 }
     }
     else {
       if (value) {
@@ -88,7 +88,7 @@ const keyLock = () => {
         }
       }
       lockBaseParams.storage.del(key)
-      return { state: 200 }
+      return { status: 200 }
     }
   }
 

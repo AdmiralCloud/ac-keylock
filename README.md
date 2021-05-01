@@ -25,7 +25,7 @@ LockKey has the following parameters
 ```
 await keylock.lockKey(params)
 // return values
-{ state: 423 } -> there is already a lock on this key
+{ status: 423 } -> there is already a lock on this key
 { value: 'xxxx' } -> a lock has been put on this key
 ```
 
@@ -37,7 +37,7 @@ ReleaseKey has the following parameters
 ```
 await keylock.releaseLock(params, [callback])
 // return values
-{ state: 200 } -> lock has been released and deleted
+{ status: 200 } -> lock has been released and deleted
 ```
 
 
@@ -58,12 +58,12 @@ const params = {
   key: 'someMeaningfulKey',
 }
 let result = await keyLock.lockKey(params)
-// { state: 423 } -> key is locked
+// { status: 423 } -> key is locked
 // { value } -> value for this lock -> set as params.value for releaseLock
 
 // redisKey is deleted and lock released
 await keyLock.releaseKey(params)
-// { state: 200 }
+// { status: 200 }
 ```
 
 ### Usage with built-in memory cache
@@ -76,12 +76,12 @@ const params = {
   key: 'someMeaningfulKey',
 }
 let result = await keyLock.lockKey(params)
-// { state: 423 } -> key is locked
+// { status: 423 } -> key is locked
 // { value } -> value for this lock -> set as params.value for releaseLock
 
 // redisKey is deleted and lock released
 await keyLock.releaseKey(params)
-// { state: 200 }
+// { status: 200 }
 
 ```
 
